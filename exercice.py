@@ -5,17 +5,28 @@
 def order(values: list = None) -> list:
     if values is None:
         # TODO: demander les valeurs ici
-        pass
+        for i in range (0, 10):
+            a = input("Entrez un nombre entier, décimal ou un mot")
+            values.append(a)
 
-    return []
+    return values.sort()
 
 
 def anagrams(words: list = None) -> bool:
     if words is None:
         # TODO: demander les mots ici
-        pass
+        mot1 = str(input("Entrez le premier mot: "))
+        mot2 = str(input("Entrez le second mot: "))
+        words.append(mot1, mot2)
+        count = 0
+        anagramme = False
+        for c in word[0]:
+            if c in word[1]:
+                count += 1
+        if count == len(word[1]):
+            anagramme= True
 
-    return False
+    return anagramme
 
 
 def contains_doubles(items: list) -> bool:
