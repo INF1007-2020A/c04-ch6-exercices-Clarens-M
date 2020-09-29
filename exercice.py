@@ -47,25 +47,63 @@ def contains_doubles(items: list) -> bool:
 
 def best_grades(student_grades: dict) -> dict:
     # TODO: Retourner un dictionnaire contenant le nom de l'étudiant ayant la meilleure moyenne ainsi que sa moyenne
-    
-    return {}
+    best = dict()
+    for key, value in student_grades.items():
+        moyenne = sum(value)/len(value)
+        
+        if len(best) == 0:
+            best = {key: moyenne}
+            g = key
+        if list(best.keys())[0] < moyenne:
+            best = {key: moyenne}
+            g = key
+            
+        
+        
+    return best{g}
 
 
 def frequence(sentence: str) -> dict:
     # TODO: Afficher les lettres les plus fréquentes
-    #       Retourner le tableau de lettres
+    palier = 0
+    count = 0
+    dico = {}
+    for c in sentence:
+        if c == " ":
+            continue
+        else:
+            dico[c] = sentence.count(c)
 
-    return {}
+    sorted_keys = sorted(dico, key=dico.__getitem__, reverse = True)
+    for key in sorted_keys:
+        if dico[key] > 5: 
+            print(f"Le caractère {key} revient {dico[key]} fois."
+    #       Retourner le tableau de lettres
+    
+    return dico
 
 
 def get_recipes():
     # TODO: Demander le nom d'une recette, puis ses ingredients et enregistrer dans une structure de données
-    pass
+    nom_recette = str(input("Entrez le nom d'une recette que vous voulez ajouter: ")
+    livre = {}
+    nombre = int(input("Entrez le nombre d'ingrédients: "))
+    ingrédients = []
+    for i in range(0, nombre):
+        b = str(input("Nom de l'ingrédient: "))
+        ingrédients.append(b)
+    livre[nom_recette] = ingrédients
+    return livre
 
 
 def print_recipe(ingredients) -> None:
     # TODO: Demander le nom d'une recette, puis l'afficher si elle existe
-    pass
+    demande = str(input("Quelle recette voulez-vous connaitre: "))
+    if demande in livre:
+        return(livre[demande])
+    else:
+        print("Les recettes du livres sont :")
+        print(list(ingrédients.keys()))
 
 
 def main() -> None:
