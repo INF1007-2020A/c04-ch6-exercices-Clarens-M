@@ -21,7 +21,7 @@ def anagrams(words: list = None) -> bool:
         count = 0
         anagramme = False
         for c in word[0]:
-            if c in word[1]:
+            if c in word[1] or c.upper() in word[1] or c.lower() in word:
                 count += 1
         if count == len(word[1]):
             anagramme= True
@@ -30,11 +30,24 @@ def anagrams(words: list = None) -> bool:
 
 
 def contains_doubles(items: list) -> bool:
-    return False
+    doubles = False
+#    count = 0
+#    for c in items:
+#        for i in range(0, len(items)):
+#            if items[i] == c:
+#                count += 1
+#            
+#    if count != 0:
+#        doubles = True
+    ensemble = set(items)
+    if len(ensemble) != len(items):
+        doubles = True
+    return doubles
 
 
 def best_grades(student_grades: dict) -> dict:
     # TODO: Retourner un dictionnaire contenant le nom de l'étudiant ayant la meilleure moyenne ainsi que sa moyenne
+    
     return {}
 
 
